@@ -1,5 +1,5 @@
 package bean;
-
+//comentario
 public class Alumno {
 	
 	private String nombre, apellidos;
