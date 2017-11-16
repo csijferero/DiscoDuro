@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+<script type="text/javascript" src="js/funciones.js"></script>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<script src="js/datepickerESP.js"></script>
+</head>
+<body>
+	<div id="contenedor">
+		<div id="cabecera">
+			<hgroup>
+				<h1>Formulario HTML5</h1>
+				<h3>- Datos -</h3>
+			</hgroup>
+		</div>
+		<div id="formu">
+			<form action="" method="get" name="nombredelformulario"
+				onsubmit="return validarFormulario()">
+				<table>
+					<tr>
+						<td><label for="nombre">Nombre</label></td>
+						<td id="tdnombre"><input type="text" name="nombre"
+							id="nombre" placeholder="Introduzca el Nombre"
+							autofocus="autofocus" onblur="validar(this)"></td>
+					</tr>
+					<tr>
+						<td><label for="apellidos">Apellidos</label></td>
+						<td><input type="text" name="apellidos" id="apellidos"
+							placeholder="Introduzca los Apellidos" autofocus="autofocus"
+							onblur="validarConSpan(this)"><span id="spapellidos"
+							style="color: red"></span></td>
+					</tr>
+					<tr>
+						<td><label for="direccion">Dirección</label></td>
+						<td><input type="text" name="direccion" id="direccion"
+							placeholder="Introduzca Dirección" autofocus="autofocus"
+							required="required"></td>
+					</tr>
+					<tr>
+						<td><label for="numero">Número</label></td>
+						<td><input type="number" name="numero" id="numero"
+							required="required" min="1" max="100"></td>
+					</tr>
+					<tr>
+						<td><label for="codpostal">Código Postal</label></td>
+						<td><input type="number" name="codpostal" id="codpostal"
+							min="0" max="99999" required="required" pattern="[0-9]{5}"></td>
+					</tr>
+					<tr>
+						<td><label for="ciudad">Ciudad</label></td>
+						<td><select id="ciudades" name="ciudades">
+								<option value="" selected="selected">- Selecciona un valor -</option>
+								<option value="Sevilla" />Sevilla
+								<option value="Huelva" />Huelva
+								<option value="Cádiz" />Cádiz
+						</select></td>
+					</tr>
+					<tr>
+						<td><label for="estado">Estado Civil</label></td>
+						<td><input type="radio" name="estado" id="estado"
+							value="Solter@" checked="checked">Solter@<input
+							type="radio" name="estado" id="estado" value="Casad@">Casad@</td>
+					</tr>
+					<tr>
+						<td><label for="edad">Edad</label></td>
+						<td><input type="range" id="edad" name="edad" value="0"
+							min="0" max="200" step="1" onchange="mostrarEdad()"> <label
+							id="miedad">0</label></td>
+					</tr>
+					<tr>
+						<td><label for="edad2">Edad Edad</label></td>
+						<td><input type="text" name="edad2" id="edad2"
+							onblur="validarEdad(this)"><span id="spedad2"
+							style="color: red"></span></td>
+					</tr>
+					<tr>
+						<td><label for="nacimiento">Fecha de Nacimiento</label></td>
+						<td><input type="datetime-local" id="nacimiento"
+							name="nacimiento"></td>
+					</tr>
+					<tr>
+						<td><label for="email">Email</label></td>
+						<td><input type="email" id="email" name="email"
+							placeholder="Email" required="required" multiple="multiple"
+							onblur="validarEmail(this)"><span id="spemail"
+							style="color: red"></span></td>
+					</tr>
+					<tr>
+						<td><label for="telefono">Teléfono</label></td>
+						<td><input type="tel" id="telefono" name="telefono"
+							required="required" placeholder="95xxxxxxx" pattern="95[0-9]{7}"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="checkbox" value="condiciones"
+							name="condiciones" id="condiciones" /> He leído y acepto las
+							condiciones</td>
+						<td><input type="checkbox" value="privacidad"
+							name="privacidad" id="privacidad" /> He leído la política de
+							privacidad</td>
+					</tr>
+					<tr>
+						<td><label for="texto">Descripción</label></td>
+						<td><textarea id="texto" onkeypress="return limita(100);"></textarea></td>
+					</tr>
+					<tr>
+						<td><label for="fecha">Fecha
+								(jqueryui.com/datepicker)</label></td>
+						<td><input type="text" id="fecha" value="" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Enviar"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

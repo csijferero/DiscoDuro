@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejercicio01</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#calcular").click(function () {
+	var numero = parseInt($("#numMult").val());
+	var inicio = parseInt($("#numInicio").val());
+	var fin = parseInt($("#numFinal").val());
+	$("#resultado").html("");
+	for (var i = inicio; i <= fin; i++) {
+		$("#resultado").html($("#resultado").html() + numero + "*" + i + "=" + numero*i + "<hr/>"); 
+	}
+
+	var d = new Date();
+
+	var month = d.getMonth()+1;
+	var day = d.getDate();
+	var year = d.getFullYear();
+	var hora = d.getHours();
+	var minutos = d.getMinutes();
+	var tabla = ["hola mundo", "hello world", "bona nit", "sayonara baby"];
+
+
+
+	var random = parseInt(Math.random() * ((3 - 0) + 1));
+		
+
+	$("#resultado").html($("#resultado").html() + day + "/" + month + "/" + year + "    " + hora + ":" + minutos + "    " + tabla[random]);
+	
+	return false;
+});
+
+
+
+	
+});
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<p>Mostrar la tabla de multiplicar de un número introducido por
+				el usuario, p.e. 7, que comienza por otro número introducido, p.e. 2
+				y finaliza por otro, p.e. 5. Resultado: 7*2=14, 7*3=21, 7*4=28,
+				7*5=35</p>
+			<p>Muestre la fecha y hora actual. Además, de un conjunto de
+				frases almacenadas en un array, debe mostrar una aleatóriamente.
+				José Antonio Ferández Romero</p>
+		</div>
+		<div>
+			<form action="" method="get">
+				<table>
+					<tr>
+						<td>Numero de la tabla de multiplicar</td>
+						<td><input type="number" id="numMult"></td>
+					</tr>
+					<tr>
+						<td>Numero inicio</td>
+						<td><input type="number" id="numInicio"></td>
+
+					</tr>
+					<tr>
+						<td>Numero final</td>
+						<td><input type="number" id="numFinal"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" id="calcular" value="Calculo"></td>
+					</tr>
+				</table>
+			</form>
+			<span id="fecha"></span> <span id="resultado"></span>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

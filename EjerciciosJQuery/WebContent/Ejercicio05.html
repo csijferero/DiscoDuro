@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ej05</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function (){
+	//Seleccionar parrafos que tengan por contenido "ca"
+	$("p:contains(ca)").css("background", "blue");
+	//Seleccionar parrafos vacios
+	$("p:empty").css("background", "red");
+	//Seleccionar parrafos con hijos
+	$("p:parent").css("background", "green");
+	//Seleccionar parrafos con enlaces dentro
+	$("p:has(a)").css("background", "yellow");
+	//Seleccionar todos los parrafos visibles
+	$("p:visible").css("background", "black");
+
+	$("button").click(function () {
+		$("p:hidden").css("background", "green").show();
+	})
+})
+</script>
+<style type="text/css">
+p {
+	width: 200px;
+	height: 20px;
+}
+</style>
+</head>
+<body>
+	<button>Ver parrafos invisibles</button>
+	<p>Informatica</p>
+	<p>Electronica</p>
+	<p>Administracion</p>
+	<p></p>
+	<p>
+		Enlace <a href="#">Google</a>
+	</p>
+	<p style="display: none">Invisible</p>
+
+</body>
+</html>

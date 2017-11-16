@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+<script type="text/javascript" src="js/codigo.js"></script>
+
+<script type="text/javascript">
+	document.addEventListener("load", init(), false);
+</script>
+
+</head>
+<body>
+	<p>Desarrolle un función que pegunte nuestro nombre y edad y
+		muestre el resultado de los días que hemos vivido hasta el momento</p>
+
+	<div style="align-content: center;">
+		<table>
+			<tr>
+				<td><label>Nombre</label></td>
+				<td><input type="text" name="nombre" id="nombre"></td>
+			</tr>
+			<tr>
+				<td><label>Edad</label></td>
+				<td><input type="number" name="edad" id="edad"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" name="calcular"
+					id="calcular" value="Calcular"></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<span id="resultado"></span>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById("calcular").addEventListener("click",
+				calcularEdad);
+	</script>
+
+	<p>Pedir dos números e indicar cual es el mayor de los dos</p>
+	<div>
+		<form action="#" name="formu1">
+			<h4 id="mensaje"></h4>
+			<label>Num 1</label><input type="number" name="num1" id="num1"><br />
+			<label>Num 2</label><input type="number" name="num2" id="num2"><br />
+			<input type="button" value="Calcular"
+				onclick="calcularMayor(document.formu1.num1.value, document.formu1.num2.value)">
+		</form>
+	</div>
+
+	<p>Pedir frase y número de repetición y mostrar la frase tantas
+		veces como indique número</p>
+	<div>
+		<form action="#" name="formu2">
+			<h4 id="mensaje2"></h4>
+			<label>Frase</label><input type="text" name="frase" id="frase"><br />
+			<label>Num Repeticiones</label><input type="number" name="contador"
+				id="contador"><br /> <input type="button" value="Mostrar"
+				onclick="mostrarFrase(document.formu2.frase.value, document.formu2.contador.value)">
+		</form>
+	</div>
+
+	<p>Pedir un número y mostrar el factorial del número</p>
+	<div>
+		<label>Número</label><input type="number" name="facto" id="facto"><input
+			type="button" name="bfacto" value="Mostrar Facto"
+			onclick="mostrarFacto()"><span id="resFacto"
+			style="margin-left: 5px; color: red; font-style: italic; font-weight: bold;"></span>
+	</div>
+
+	<p>Mostrar a^b pidiendo los dos números. Utilice la clase Math</p>
+	<div>
+		<label>Calcular</label><input type="number" name="base" id="base">^<input
+			type="number" name="exponente" id="exponente"><input
+			type="button" value="=" onclick="calcularPotencia()"><span
+			id="potencia"
+			style="margin-left: 5px; color: red; font-style: italic; font-weight: bold;"></span>
+	</div>
+
+	<p>Calcule aleatoriamente un número entre 1 y 10 e intente
+		adivinarlo</p>
+	<div>
+		<label>Número</label><input type="text" name="numero" id="numero"><input
+			type="button" value="Adivinar"
+			onclick="adivinarNumero(document.getElementById('numero').value)"><span
+			id="mensajeAdivinar"></span>
+	</div>
+
+	<p>Escribe un programa que nos vaya pidiendo números. Si escribimos
+		el número 9999 se acaba; por último el programa nos da como resultado
+		el número de números introducidos, exceptuando el 9999. Además nos dé
+		la suma de todos los números introducidos, exceptuando el 9999. Además
+		nos dé el producto de los números introducidos, exceptuando el 9999</p>
+	<div>
+		<label>Número Repetición</label> <input type="number" name="numrep"
+			id="numrep" max="9999" min="1" onfocus="this.select()"> <input
+			type="button" id="calcularRep" value="Calcular"
+			onclick="calcularRepetido(document.getElementById('numrep').value)">
+
+		<input type="button" value="Reiniciar" onclick="reiniciarRepetido()">
+
+		<span id="resultadoRep"></span>
+
+	</div>
+
+	<p>Haz un programa que escriba los 15 primeros múltiplos de un
+		número introducido por el usuario. El programa ha de tener la
+		posibilidad de volver a empezar</p>
+	<div>
+		<label>Número con Múltiplos</label> <input type="number"
+			name="numMult" id="numMult" onfocus="this.select()"> <input
+			type="button" id="calcularMult" value="Calcular Multiplos"
+			onclick="calcularMultiplos(document.getElementById('numMult').value)">
+		<br /> <span id="resultadoMult"></span>
+
+	</div>
+
+	<p>Haz un programa que nos pida un número y dé como resultado la
+		tabla de multiplicar del número</p>
+	<div>
+		<label>Tabla de Multiplicar</label> <input type="number"
+			name="numTabla" id="numTabla" onfocus="this.select()"> <input
+			type="button" id="calcularTabla" value="Tabla de Multiplicar"
+			onclick="calcularTabla(document.getElementById('numTabla').value)">
+		<br /> <span id="resultadoTabla"></span>
+
+	</div>
+
+	<p>Con función con return. Programa que determina si un número es
+		primo, pero utilizando una función</p>
+
+	<div>
+		<label>¿Es Primo?</label> <input type="number" name="primo" id="primo">
+		<input type="button" value="Comprobar"
+			onclick="comprobarPrimo(document.getElementById('primo').value)">
+		<span id="resultadoPrimo"></span>
+	</div>
+
+	<p>Calculadora</p>
+
+	<div>
+		<table>
+			<tr>
+				<td colspan="4"><input type="text" name="calcu" id="calcu"
+					readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="8"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="9"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="+"
+					onclick="pulsadoOperacion(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="5"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="6"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="-"
+					onclick="pulsadoOperacion(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="2"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="3"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="*"
+					onclick="pulsadoOperacion(this.value)"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0"
+					onclick="pulsadoNumero(this.value)"></td>
+				<td><input type="button" value="."
+					onclick="pulsadoOperacion(this.value)"></td>
+				<td><input type="button" value="=" onclick="pulsadoIgual()"></td>
+				<td><input type="button" value="/"
+					onclick="pulsadoOperacion(this.value)"></td>
+			</tr>
+		</table>
+	</div>
+
+	<p>Dado un textarea y un botón. Mostrar el número de vocales y
+		cuantas son "a", "e", ...</p>
+	<div>
+		<textarea rows="5" cols="25" id="textoVocales" name="textoVocales"></textarea>
+		<input type="button" value="Calcular" onclick="comprobarVocales()"><br />
+		<span id="resultVocales"></span>
+	</div>
+
+</body>
+</html>

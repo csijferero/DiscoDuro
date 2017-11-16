@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejercicio03</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("input:submit").click(function () {
+		if($("#text").val()==""){
+			if($("#text").hasClass("correcto"))
+			$("#text").removeClass("correcto");
+			
+			$("#text").addClass("error");
+			$("#text").focus();
+		} else{
+			if($("#text").hasClass("error"))
+			$("#text").removeClass("error");
+			
+			$("#text").addClass("correcto");
+			}
+		if(!$("#check1").prop("checked")&&!$("#check2").prop("checked")){
+			if($("#uno").hasClass("correcto"))
+				$("#uno").removeClass("correcto");
+			if($("#dos").hasClass("correcto"))
+				$("#dos").removeClass("correcto");
+			
+			$("#uno").addClass("error");
+			$("#dos").addClass("error");
+		} else{
+			if($("#uno").hasClass("error"))
+				$("#uno").removeClass("error");
+			if($("#dos").hasClass("error"))
+				$("#dos").removeClass("error");
+				
+				$("#uno").addClass("correcto");
+				$("#dos").addClass("correcto");
+			}
+		
+		return false;
+	});
+});
+</script>
+<style type="text/css">
+.error {
+	border: 1px solid red;
+}
+
+.correcto {
+	border: 1px solid green;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div>
+			<p>JOSE ANTONIO FERNANDEZ ROMERO Cree un formulario para validar un campo de texto (si está
+				vacío). Si salta la validación debe cambiar el color del borde de la
+				caja de texto (rojo) y devolver el foco a la caja de texto. Añadir
+				dos checkbox y comprobar que se ha pulsado, por lo menos, uno de
+				ellos.</p>
+		</div>
+		<form action="">
+			<input type="text" id="text">
+			</br>
+			<input type="checkbox" id="check1"> <i id="dos">Uno</i>
+			<input type="checkbox" id="check2"> <i id="uno">Dos</i>
+			</br>
+			<input type="submit" value="Enviar">
+		</form>
+	</div>
+</body>
+</html>

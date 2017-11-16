@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejercicio01</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("input").blur(function () {
+		if($(this).attr("id")=="numLapices")
+			$("#numLapicesRES").text(2.5*($("#numLapices").val()) + "€");
+		else if($(this).attr("id")=="numRotuladores")
+			$("#numRotuladoresRES").text(3.2*($("#numRotuladores").val()) + "€");
+		else if($(this).attr("id")=="numLibretas")
+			$("#numLibretasRES").text(3.2*($("#numLibretas").val()) + "€");
+	});
+	
+	$("#enviar").click(calcularTodo);
+	
+	$("#borrar").click(function () {
+		$("#numLapices").val("");
+		$("#numRotuladores").val("");
+		$("#numLibretas").val("");
+		
+		calcularTodo();
+		
+		$("span").text("");
+		
+		return false;
+	});
+	
+	function calcularTodo() {
+		var totalLapices = $("#numLapices");
+		var totalRotuladores = $("#numRotuladores");
+		var totalLibretas = $("#numLibretas");
+		var res = (totalLapices.val()*2.5 + totalRotuladores.val()*3.2 + totalLibretas.val() * 5.4) + "€";
+		$("#total").text(res);
+		
+		var texto = $("#numLapices").val() + " Lapices <hr/>";
+		texto += $("#numRotuladores").val() + " Rotuladores <hr/>";
+		texto += $("#numLibretas").val() + " Libretas <hr/>";
+		texto += "Precio final: " + res;
+		$("#resultado").html(texto);
+		return false;
+	}
+});
+</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<p>Desarrolle un menú en el que el usuario debe ingresar cuantos
+				lápices quiere (a 2,5€ el lápiz), cuantos rotuladores quiere (a 3,2€
+				el rotulador) y cuantas libretas quiere (a 5,4€ la libreta). Cuando
+				la caja de texto de una cantidad pierda el foco, debe aparecer al
+				lado el subtotal calculado del producto y debajo de todo el total de
+				la compra. Añade dos botones para mostrar toda la información en un
+				span justo debajo de esta capa y otro botón para borrar todas las
+				entradas José Antonio Ferández Romero</p>
+		</div>
+		<div>
+			<form action="" method="get" >
+				<table>
+					<tr>
+						<td>Lapices (2.5€)</td>
+						<td><input type="number" id="numLapices" min="0"><span id="numLapicesRES"></span></td>
+					</tr>
+					<tr>
+						<td>Rotuladores (3.2€)</td>
+						<td><input type="number" id="numRotuladores" min="0"><span id="numRotuladoresRES"></span></td>
+
+					</tr>
+					<tr>
+						<td>Libretas (5.4€)</td>
+						<td><input type="number" id="numLibretas" min="0"><span id="numLibretasRES"></span></td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td><span id="total"></span></td>
+					</tr>
+					<tr>
+					<td><input type="submit" value="Calcular" id="enviar"></td>
+					<td><input type="button" value="Borrar" id="borrar"></td>
+					</tr>
+				</table>
+			</form>
+			<span id="resultado"></span>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

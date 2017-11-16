@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Web Bootstrap</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to.fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row justify-content.center">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h1>Login</h1>
+				<hr>
+				<form action="menu.html" method="post" role="form">
+					<div class="form-group">
+						<label for="email">Email</label> <input type="email"
+							class="form-control" id="email" placeholder="Email"
+							autofocus="autofocus" aria-describedby="emailH"> <small
+							id="emailH" class="form-text text-muted">Email Personal
+							Para Login</small>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> <input type="password"
+							class="form-control" id="password" placeholder="Password">
+					</div>
+					<div class="form-check">
+						<label class="form-check-label"> <input type="checkbox"
+							class="form-check-input"> Recordar
+						</label>
+					</div>
+					<button type="submit" class="btn btn-Primary btn-lg">
+						<i class="fa fa-sign-in"></i>Enviar
+					</button>
+				</form>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<h1>Registro</h1>
+				<hr>
+				<form action="" method="post" role="form">
+					<div class="row">
+						<div class="col-md-3 field-label-responsive">
+							<label for="nombre">Nombre</label>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" name="nombre" class="form-control"
+										id="nombre" placeholder="Nombre" required="required">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-control-feedback">
+								<span class="text-danger align-middle"><i
+									class="fa fa-close"></i>Error Nombre</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 field-label-responsive">
+							<label for="nombre">Registrar</label>
+						</div>
+						<div class="col-md-6">
+							<button type="submit" class="btn btn-success">
+								<i class="fa fa-user-plus"></i>Registrar
+							</button>
+						</div>
+						<div class="col-md-3"></div>
+
+					</div>
+			</div>
+			</form>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<h1>Subscribe</h1>
+			<hr>
+			<form action="" method="post" role="form" class="form-inline">
+				<div class="form-group">
+					<label for="emailS">Email</label> <input type="email"
+						class="form-control" id="emailS" name="emailS"
+						placeholder="Email de Subscripcion">
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+						<label class="mr-2" for="caducidad"></label> <select
+							class="custom-select" id="caducidad" name="caducidad">
+							<option>Elige...</option>
+							<option>Anual</option>
+						</select>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

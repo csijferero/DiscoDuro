@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejercicio01</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#calcular").click(function () {
+		var tablaOrigen = $("input[name=origen]");
+		var origen;
+		for (var i = 0; i < tablaOrigen.length; i++) {
+			if (tablaOrigen[i].checked)
+				origen = tablaOrigen[i];
+		}
+
+		var tablaDestino = $("input[name=destino]");
+		var destino;
+		for (var i = 0; i < tablaDestino.length; i++) {
+			if (tablaDestino[i].checked)
+				destino = tablaDestino[i];
+		}
+		$("#total").html("Origen: " + origen.getAttribute("id")
+				+ " --> " + origen.getAttribute("value") + "€ <hr/> Destino: " + destino.getAttribute("id")
+				+ " --> " + destino.getAttribute("value") + "€ <hr/> Viajeros: "
+				+ numViajeros.getAttribute("value") + " --> " + numViajeros.getAttribute("value") * 8 + "€ <hr/> Total: " + (parseInt(origen.getAttribute("value"))+parseInt(destino.getAttribute("value"))+parseInt(numViajeros.getAttribute("value")*8)) + "€");
+
+		return false;
+	});
+});
+</script></head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<p>Calcular el precio de trayectos en autobús.Implemente una
+				función que calcule el importe del trayecto seleccionado en función
+				del origen y destino y del número de personas. El procedimiento es
+				el siguiente: Tendremos dos grupos de radiobuttons para indicar el
+				origen y el destino. El usuario debe seleccionar un origen y un
+				destino. Al pulsar el botón Calcular se calculará el importe del
+				viaje en función del origen, el destino y el número de viajeros. El
+				importe se mostrará en el campo total. Los orígenes, destinos y
+				precios por persona/trayecto los debes completar como quieras José Antonio Ferández Romero</p>
+		</div>
+		<div>
+			<form action="" method="get" >
+				<table>
+					<tr>
+						<td>Origen</td>
+						<td><input type="radio" id="sevilla" name="origen" value="5"
+							checked="checked">Sevilla <br /> <input type="radio"
+							id="malaga" name="origen" value="10">Malaga <br /> <input
+							type="radio" id="jaen" name="origen" value="15">Jaen</td>
+					</tr>
+					<tr>
+						<td>Destino</td>
+						<td><input type="radio" id="madrid" name="destino" value="20"
+							checked="checked">Madrid <br /> <input type="radio"
+							id="valencia" name="destino" value="25">Valencia <br />
+							<input type="radio" id="murcia" name="destino" value="30">Murcia</td>
+					</tr>
+					<tr>
+						<td>Numero Viajeros</td>
+						<td><input type="number" id="numViajeros" value="1" min="1"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Calcular" id="calcular"></td>
+					</tr>
+				</table>
+			</form>
+			<span id="total"></span>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

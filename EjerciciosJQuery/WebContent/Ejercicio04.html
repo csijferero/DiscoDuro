@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ej04</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	//Seleccionar el primer enlace dentro del parrafo
+	$("p a:first-child").css("background", "gray");
+	//Seleccionar el ultimo enlace dentro del parrafo
+	$("p a:last-child").css("background", "cyan");
+	//Seleccionar un enlace en particular
+	$("p a:nth-child(2)").css("background", "blue");
+	
+	
+})
+
+</script>
+</head>
+<body>
+	<p>
+		<a href="#">Enlace 1</a> <a href="#">Enlace 2</a> <a href="#">Enlace
+			3</a> <a href="#">Enlace 4</a> <a href="#">Enlace 5</a>
+	</p>
+</body>
+</html>

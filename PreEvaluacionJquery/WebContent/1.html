@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Primero</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#capa1").hover(function () {
+			$(this).toggleClass("backBlue");
+		});
+		$("#capa3").hover(function () {
+			$(this).toggleClass("borYellow");
+		});
+		$("#capa2").click(function () {
+			$(this).toggleClass("texGreen");
+		});
+	});
+</script>
+<style type="text/css">
+.backBlue{
+background-color: blue;
+}
+.borYellow{
+border:2px solid yellow;
+}
+.texGreen{
+color: green;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>Cree tres capas con sus respectivos id. Cuando pase el ratón
+			por encima cambie el color de fondo de la capa con id igual a capa1 a
+			azul. Si el ratón pasa por la capa con id capa3 se debe poner un
+			borde amarillo a la capa. Por último, si pulsamos en la capa con id
+			capa2 se debe poner la letra de color verde.</p>
+		<div id="capa1">
+			<p>Capa1</p>
+		</div>
+		<div id="capa2">
+			<p>Capa2</p>
+		</div>
+		<div id="capa3">
+			<p>Capa3</p>
+		</div>
+	</div>
+</body>
+</html>

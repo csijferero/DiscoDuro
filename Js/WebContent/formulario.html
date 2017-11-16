@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+<script type="text/javascript" src="js/validaciones.js"></script>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/datepickerESP.js"></script>
+
+</head>
+<body>
+	<div id="contenedor">
+		<h1>Formulario</h1>
+		<div id="formu">
+			<form action="" method="get" name="nombredelformulario"
+				onsubmit="return validarFormulario()">
+				<label for="nombre">Nombre</label> <input type="text" name="nombre"
+					id="nombre" placeholder="Nombre" autofocus="autofocus"
+					onblur="validar(this)"><span id="spnombre"
+					style="color: red"></span> <br /> <label for="apellidos">Apellidos</label>
+				<div id="dvapellidos">
+					<input type="text" name="apellidos" id="apellidos"
+						placeholder="Apellidos" onblur="validarOtro(this)">
+				</div>
+				<label for="codigopostal">Código Postal</label> <input type="number"
+					name="codigopostal" id="codigopostal" min="0" max="99999"
+					required="required" pattern="[0-9]{5}"> <br /> <label
+					id="ciudad">Ciudad</label> <select id="ciudades" name="ciudades">
+					<option value="" selected="selected">- Seleccione un valor -</option>
+					<option value="Sev">Sevilla</option>
+					<option value="Hue">Huelva</option>
+				</select> <br /> <label id="estado">Estado Civil</label> <input type="radio"
+					name="estado" id="estado" value="S" checked="checked">Soltero
+				<input type="radio" name="estado" id="estado" value="C">Casado
+
+				<br /> <input type="checkbox" name="futbol" id="futbol" value="F">Fútbol
+
+				<br /> <label for="edad">Edad</label> <input type="text"
+					name="edad" id="edad"> <br /> <label for="email">Email</label>
+				<input type="email" name="email" id="email"
+					onblur="validarEmail(this)"> <span id="spemail"
+					style="color: red"></span> <br /> <label for="desc">Descripción</label>
+				<textarea rows="5" cols="50" id="desc" name="desc"
+					onkeypress="return limite(100)"></textarea>
+
+				<br /> <label for="fecha">Fecha</label> <input type="text"
+					id="fecha" name="fecha"> <br /> <input
+					type="submit" value="Enviar">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

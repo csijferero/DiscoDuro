@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="login">
+<head>
+<meta charset="ISO-8859-1">
+<title>Calvos Login</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to.fit=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/trabajo.css">
+</head>
+<body class="login" onload="recordar()">
+	<nav class="navbar navbar-inverse" style="background-color: #91A4C1;">
+		<a class="navbar-brand" href="log.html"> <img src="images/Nav.png"
+			width="30" height="30" class="d-inline-block align-top" alt="">
+			<span class="font-weight-bold">Hermanos Calvo</span>
+		</a> <span class="text-right font-italic">Peluqueria</span>
+	</nav>
+
+	<div class="container">
+		<div class="card card-container">
+			<img id="profile-img" class="profile-img-card" src="images/login.png" />
+			<p id="profile-name" class="profile-name-card"></p>
+			<form action="menu.html" class="form-signin" onsubmit="init()"
+				method="post">
+				<span id="reauth-email" class="reauth-email"></span> <input
+					type="email" id="inputEmail" class="form-control"
+					placeholder="Email" required autofocus> <input
+					type="password" id="inputPassword" class="form-control"
+					placeholder="Contraseña" required>
+				<div class="checkbox">
+					<label> <input id="recordar" type="checkbox">
+						Recordar Email
+					</label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block btn-signin"
+					type="submit">Acceder</button>
+			</form>
+			<!-- /form -->
+			<a href="#" class="forgot-password"> Recuperar Contraseña </a>
+		</div>
+		<!-- /card-container -->
+	</div>
+	<!-- /container -->
+
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/trabajo.js"></script>
+</body>
+</html>

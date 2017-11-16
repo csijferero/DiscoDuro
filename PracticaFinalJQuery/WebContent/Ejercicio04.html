@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejercicio04</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#poner").click(function () {
+		if(!$("table").hasClass("borde"))
+		$("table").addClass("borde");
+	});
+	$("#quitar").click(function () {
+		if($("table").hasClass("borde"))
+		$("table").removeClass("borde");
+	});
+});
+</script>
+<style type="text/css">
+.borde {
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div>
+			<p>JOSE ANTONIO FERNANDEZ ROMERO Defina una tabla y dos botones. Al pulsar en el primer botón
+				debe poner borde a la tabla. Al pulsar en el segundo botón debe
+				quitar el borde de la tabla.</p>
+		</div>
+		<table>
+			<tr>
+				<td>Primero</td>
+				<td>Segundo</td>
+			</tr>
+			<tr>
+				<td>Tercero</td>
+				<td>Cuarto</td>
+			</tr>
+		</table>
+		<button id="poner">Poner Borde</button>
+		<button id="quitar">Quitar Borde</button>
+	</div>
+</body>
+</html>

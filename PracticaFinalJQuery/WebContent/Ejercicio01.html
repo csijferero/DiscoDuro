@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejercicio01</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("h1").click(function () {
+			$(this).toggleClass("cambio");
+		});
+	});
+</script>
+<style type="text/css">
+.cambio {
+	color: green;
+	background-color: blue;
+	font-style: oblique;
+}
+</style>
+</head>
+<body>
+	<div>
+		<div>
+			<p>JOSE ANTONIO FERNANDEZ ROMERO Página que muestre dos títulos de primer nivel (h1), al ser
+				presionados cambiar el color de fuente, fondo y la fuente del texto.</p>
+		</div>
+		<h1>Primer H1</h1>
+		<h1>Segundo H1</h1>
+	</div>
+</body>
+</html>

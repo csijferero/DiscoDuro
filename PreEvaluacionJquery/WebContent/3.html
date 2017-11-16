@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>3</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#boton").click(function () {
+			$("#parrafo a:first-child").toggleClass("btnNeg");
+		});
+	});
+</script>
+<style type="text/css">
+.btnNeg{
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>Cree un párrafo con tres enlaces en su interior. Al pulsar un
+			botón debe poner en negrita el texto del primer enlace.</p>
+		<p id="parrafo">
+		<a href="www.google.es">Primero</a>
+		<a href="www.hotmail.com">Segundo</a>
+		<a href="www.altair.edu.es">Tercero</a>
+		</p>
+		<button id="boton">Boton</button>
+	</div>
+</body>
+</html>

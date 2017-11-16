@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejercicio09</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#parrafo").on("mouseover mouseout", function () {
+		$(this).toggleClass("over");
+	});
+
+	$("#boton").on("mouseover mouseout", function () {
+		$(this).toggleClass("over");
+	});
+	function saludo(event) {
+		alert("hola " + event.data.nombre + " , " + event.data.edad)
+	}
+	$("#boton").on("click", {nombre: "Yo", edad: "38"}, saludo);
+});
+</script>
+<style type="text/css">
+.over{
+	background: blue;
+}
+</style>
+</head>
+<body>
+	<button id="boton">Probar</button>
+	<p id="parrafo">fewfewfewfewfewfewfwefwe
+		ewfwefewfewfewewfewfweffwefwe ewfwefewfewfwefweffwef
+		fwefewffeefwfewefwwefewfewf ewfewfwefefwfewefwewfewfwe
+		fewfewfewfefefwefefwfewfwe
+		wefewfwefwefewfwefewfwefffweffffffffffffffffffwefefwefwefwefw
+		ewfewfewfwefwef wefewfwefwefewf efewfewfwefewfewfwefwefwefewfewfwe</p>
+
+</body>
+</html>

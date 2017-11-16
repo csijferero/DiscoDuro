@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>4</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("img").mouseenter(function () {
+		$(this).addClass("ocult");
+	});
+	$("img").mouseleave(function () {
+		$(this).removeClass("ocult");
+	});
+});
+</script>
+<style type="text/css">
+.ocult {
+	visibility: hidden;
+}
+</style>
+</head>
+<body>
+	<div>
+		<p>Diseñe una página con una sola imagen. Si sitúa el ratón por
+			encima se oculta la imagen. Al salir el ratón de la imagen, se
+			muestra la imagen. Utilice sólo una clase de css.</p>
+		<img id="imagen" alt="img" src="img/dell-logo-150x150.jpg">
+	</div>
+</body>
+</html>

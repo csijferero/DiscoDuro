@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Ejercicio01</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+<script type="text/javascript" src="js/funciones2.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<p>Desarrolle un formulario con los siguientes campos (nombre,
+				apellidos, email, web, edad, login, password, repite password). Las
+				validaciones son: no permitir campos vacíos, email correcto, web
+				correcta, edad correcta, password y repetir password iguales.
+				Comprobar estas validaciones dentro del formulario José Antonio Ferández Romero</p>
+		</div>
+		<div>
+			<form action="" method="get" onsubmit="return validar()">
+				<table>
+					<tr>
+						<td>Nombre</td>
+						<td><input type="text" id="nombre" required="required"></td>
+					</tr>
+					<tr>
+						<td>Apellidos</td>
+						<td><input type="text" id="apellido" required="required"></td>
+
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><input type="email" id="email" required="required"></td>
+					</tr>
+					<tr>
+						<td>Web</td>
+						<td><input type="url" id="web" required="required"></td>
+					</tr>
+					<tr>
+						<td>Edad</td>
+						<td><input type="number" id="edad" min="0" required="required"></td>
+					</tr>
+					<tr>
+						<td>Contraseña</td>
+						<td><input type="password" id="contraseña" required="required"></td>
+					</tr>
+					<tr>
+						<td>Repita Contraseña</td>
+						<td><input type="password" id="contraseña2" required="required"></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="Enviar"></td>
+					</tr>
+				</table>
+			</form>
+			<span id="valido"></span>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

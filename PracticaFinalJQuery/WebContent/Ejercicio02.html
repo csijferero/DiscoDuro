@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejercicio02</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("button").hover(function () {
+			if($(this).attr("id")=="btn1"){
+				$("#noticia1").toggle();
+				$("#imagen1").toggle();
+			}
+			else if($(this).attr("id")=="btn2"){
+				$("#noticia2").toggle();
+				$("#imagen2").toggle();
+			}
+			else if($(this).attr("id")=="btn3"){
+				$("#noticia3").toggle();
+				$("#imagen3").toggle();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div>
+		<div>
+			<p>JOSE ANTONIO FERNANDEZ ROMERO Crear 3 titulares de noticias, que se llamen noticia1,
+				noticia2 y noticia3. Cuando el usuario situe el ratón encima de cada
+				boton tiene que aparecer el contenido de la noticia, que estará
+				dentro de una capa. El contenido de la capa (es decir el contenido
+				de la noticia) puede tener texto y fotografías. Cuando el usuario
+				aleje el ratón del botón la noticia (la capa) debe de desaparecer.
+				Usar solo una capa para mostrar las 3 noticias.</p>
+		</div>
+		<button id="btn1">Mostrar 1</button>
+		<button id="btn2">Mostrar 2</button>
+		<button id="btn3">Mostrar 3</button>
+		<div>
+			<p style="display: none" id="noticia1">noticia1</p>
+			<img style="display: none" id="imagen1" src="img/newspaper_bw.jpg" />
+
+			<p style="display: none" id="noticia2">noticia2</p>
+			<img style="display: none" id="imagen2" src="img/Noticias-Cambio-kyk.jpg" />
+
+			<p style="display: none" id="noticia3">noticia3</p>
+			<img style="display: none" id="imagen3" src="img/noticias.png" />
+		</div>
+	</div>
+</body>
+</html>
