@@ -10,19 +10,32 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.ScriptAssert;
 
 @Entity
 @Table(name="equipo")
+@ScriptAssert.List({
+		@ScriptAssert(lang="javascript", script="(_this.numSocios>200000)? true : false", message="Numero Socios deberia ser mayor que 200000")
+})
 public class Equipo implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idEquipo;
 
+	@Size(min=5, max=10)
 	private String nombre;
 
+	@NotNull
+	@NotBlank
 	private String ciudad;
 
+	
 	private int numSocios;
 	@OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
 	private Set<Jugador> jugadores;
@@ -77,6 +90,9 @@ public class Equipo implements Serializable {
 				+ "]";
 	}
 	
-	
+	@AssertTrue(message="NO ES DE SEVILLA")
+	private boolean isDeSevilla() {
+		return ciudad.equalsIgnoreCase("Sevilla");
+	}
 
 }

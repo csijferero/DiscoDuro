@@ -7,6 +7,8 @@ import es.altair.hibernate.bean.Jugador;
 
 public interface JugadorDAO {
 
-	List<Jugador> listado();
+	public List<Jugador> listado();
+
+	public void mostrarJugadoresPaginacion(int i);
 
 }

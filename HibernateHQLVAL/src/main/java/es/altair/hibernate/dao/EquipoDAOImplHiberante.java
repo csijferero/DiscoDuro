@@ -3,6 +3,9 @@ package es.altair.hibernate.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -114,6 +117,28 @@ public class EquipoDAOImplHiberante implements EquipoDAO {
 			sf.close();
 		}
 		return equipos;
+	}
+
+	public void guardar(Equipo eq) {
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		Session session = sf.openSession();
+
+		try {
+			session.beginTransaction();
+			session.save(eq);
+			session.getTransaction().commit();
+		} catch (ConstraintViolationException e) {
+			session.getTransaction().rollback();
+			System.out.println("--- Errores ---");
+			for (ConstraintViolation cv : e.getConstraintViolations()) {
+				System.out.println("Campo: " + cv.getPropertyPath());
+				System.out.println("Mensaje: " + cv.getMessage());
+			}
+		} finally {
+			session.close();
+			sf.close();
+		}
+
 	}
 
 }

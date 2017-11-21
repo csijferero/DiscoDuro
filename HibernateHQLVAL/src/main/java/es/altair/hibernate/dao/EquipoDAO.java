@@ -17,4 +17,6 @@ public interface EquipoDAO {
 
 	public List<Equipo> listadoPorSocios(int num);
 
+	public void guardar(Equipo eq);
+
 }
