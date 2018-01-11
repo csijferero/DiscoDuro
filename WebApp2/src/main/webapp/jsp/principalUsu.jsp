@@ -27,7 +27,16 @@
 				List<Libro> libros = lDAO.listar((Usuario) session.getAttribute("usuLogeado"));
 		%>
 
-		<a href="../CerrarSesion">Cerrar Sesión</a>
+		<div class="row">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="../index.jsp">Bienvenido
+						<%=((Usuario)session.getAttribute("usuLogeado")).getNombre()%>
+				</a></li>
+				<li class="breadcrumb-item">Pincipal Usuario</li>
+				<li class="breadcrumb-item active"><a href="../CerrarSesion">Cerrar
+						Sesión</a></li>
+			</ol>
+		</div>
 
 		<div class="row col-md-8 col-md-offset-2">
 			<table class="table table-striped">
@@ -54,7 +63,7 @@
 						width="50" height="50"></td>
 					<td>
 						<button type="button" class="btn btn-default"
-							onclick="location.href='jsp/editarLibro.jsp'">
+							onclick="location.href='editarLibro.jsp?uuid=<%=l.getUuid()%>'">
 							<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 							Actualizar
 						</button> <!-- Button trigger modal -->
@@ -82,7 +91,8 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary"
 											data-dismiss="modal">No</button>
-										<button type="button" class="btn btn-primary" onclick="location.href='../BorrarLibro?uuid=<%=l.getUuid()%>'">Sí</button>
+										<button type="button" class="btn btn-primary"
+											onclick="location.href='../BorrarLibro?uuid=<%=l.getUuid()%>'">Sí</button>
 									</div>
 								</div>
 							</div>

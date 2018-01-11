@@ -22,6 +22,18 @@
   	<description></description>
   	<servlet-class>es.altair.controller.BorrarLibro</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditarLibro</servlet-name>
+  	<display-name>EditarLibro</display-name>
+  	<description></description>
+  	<servlet-class>es.altair.controller.EditarLibro</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AnadirLibro</servlet-name>
+  	<display-name>AnadirLibro</display-name>
+  	<description></description>
+  	<servlet-class>es.altair.controller.AnadirLibro</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ValidarUsuario</servlet-name>
   	<url-pattern>/ValidarUsuario</url-pattern>
@@ -33,5 +45,13 @@
   <servlet-mapping>
   	<servlet-name>BorrarLibro</servlet-name>
   	<url-pattern>/BorrarLibro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditarLibro</servlet-name>
+  	<url-pattern>/EditarLibro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AnadirLibro</servlet-name>
+  	<url-pattern>/AnadirLibro</url-pattern>
   </servlet-mapping>
 </web-app>
